@@ -1,15 +1,15 @@
 {
   "name": "mobi-zipper",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Compiles a Mobi file using [calibre](https://calibre-ebook.com/)’s `ebook-convert`.  Returns a promise object.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Maxwell Simmer (http://maxwellsimmer.com)",
   "scripts": {
-    "ava": "ava --verbose || true",
-    "lint": "eslint ./*.jsx || true",
+    "ava": "npm run build && ava --verbose || true",
+    "lint": "./node_modules/.bin/eslint ./*.jsx || true",
     "prepublish": "npm run build",
     "test": "npm run ava && npm run lint",
-    "build": "babel --presets es2015,stage-0 ./index.jsx -o ./index.js"
+    "build": "babel --presets es2015,stage-0 -d dist/ lib/"
   },
   "repository": {
     "type": "git",

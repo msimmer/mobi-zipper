@@ -16,7 +16,7 @@ import path from 'path'
 import zipper from 'mobi-zipper'
 
 const options = {
-  input: path.join(__dirname, './book-dir'),
+  input: path.join(__dirname, './book-dir/OPS/content.opf'),
   output: __dirname,
   clean: true // Removes existing .mobis in the output dir
 }
