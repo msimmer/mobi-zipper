@@ -12,7 +12,6 @@ class Mobi {
       bookname: null,
       bookpath: null,
       calibre: null,
-      // flags: []
       flags: [
         '--mobi-file-type=both',
         '--disable-font-rescaling',
@@ -79,7 +78,7 @@ class Mobi {
     return [
       this._get('calibre'),
       this._get('input'),
-      this._get('bookname'),
+      this._get('bookpath'),
       this._get('flags').join(' '),
     ].join(' ')
   }
@@ -106,14 +105,22 @@ class Mobi {
   create({ ...args }) {
     Object.assign(this.options, args)
     const required = ['input', 'output']
+
     required.forEach((_) => {
       if (!this.options[_] || !{}.hasOwnProperty.call(this.options, _)) {
         throw new Error(`Missing required argument: \`${_}\``)
       }
     })
+
+    if (!path.extname(this._get('input'))) {
+      throw new Error('Input file must have an extension.')
+    }
+
     this._set('modified', new Date().toISOString())
     this._set('bookname', `${this._get('modified')}.mobi`)
     this._set('bookpath', `"${path.resolve(this._get('output'), this._get('bookname'))}"`)
+
+
     return new Promise(resolve/* , reject */ =>
       this.checkForCalibre()
       .catch((err) => {
