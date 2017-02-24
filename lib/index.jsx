@@ -116,7 +116,7 @@ class Mobi {
       throw new Error('Input file must have an extension.')
     }
 
-    this._set('modified', new Date().toISOString())
+    this._set('modified', new Date().toISOString().replace(/:/g, '-'))
     this._set('bookname', `${this._get('modified')}.mobi`)
     this._set('bookpath', `"${path.resolve(this._get('output'), this._get('bookname'))}"`)
 
