@@ -4,8 +4,10 @@
   "description": "Compiles a Mobi file using calibre’s `ebook-convert`. Returns a promise object.",
   "main": "dist/index.js",
   "author": "Maxwell Simmer (http://maxwellsimmer.com)",
+  "engines": {
+    "node": ">=6"
+  },
   "scripts": {
-    "ava": "npm run build && ava --verbose || true",
     "lint": "./node_modules/.bin/eslint ./lib/*.js || true",
     "prepublish": "npm run build",
     "mocha": "NODE_ENV=test ./node_modules/.bin/_mocha -- ./test.js",
