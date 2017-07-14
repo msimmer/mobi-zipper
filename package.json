@@ -1,6 +1,6 @@
 {
   "name": "mobi-zipper",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Compiles a Mobi file using calibre’s `ebook-convert`. Returns a promise object.",
   "main": "dist/index.js",
   "author": "Maxwell Simmer (http://maxwellsimmer.com)",
