@@ -1,20 +1,12 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb"],
+  "extends": ["standard"],
   "presets": ["es2015", "stage-0"],
   "ecmaFeatures": { "classes": true, "jsx": true },
   "plugins": ["babel"],
   "rules": {
-    "import/extensions": [2, "never"],
-    "brace-style": [2, "1tbs", { "allowSingleLine": true }],
-    "max-statements-per-line": [2, { "max": 2 }],
-    "semi": [2, "never"],
     "comma-dangle": [2, "always-multiline"],
-    "one-var": [2, "never"],
-    "no-cond-assign": [2, "except-parens"],
-    "max-len": [2, 100, { "ignoreComments": true }],
-    "operator-linebreak": [2, "before"],
-    "no-underscore-dangle": [2, { "allowAfterThis": true }],
+    "no-multiple-empty-lines": 0,
     "space-before-function-paren": [2, {
         "anonymous": "always",
         "named": "never"

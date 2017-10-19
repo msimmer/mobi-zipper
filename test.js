@@ -1,24 +1,22 @@
 const path = require('path')
-const mobi = require('./dist').default
+const zipper = require('./dist').default
 const chai = require('chai')
 const chaiAsPromised = require('chai-as-promised')
-const exec = require('child_process').exec
+const fs = require('fs-extra')
 
 chai.should()
 chai.use(chaiAsPromised)
 
-describe('#checkForCalibre', () => {
-  it('should verify that calibre\'s ebook-convert is installed', (done) => {
-    exec('hash foo 2>/dev/null', (err) => {
-      err.message.should.match(/Command failed:/)
+
+const cwd = process.cwd()
+const input = path.join(cwd, 'book', 'OPS', 'content.opf')
+const output = path.join(cwd)
+
+describe('mobi-zipper', () => {
+  it('creates a mobi', (done) => {
+    zipper.create({ input, output }).then(() => {
+      fs.readdirSync(output).filter(_ => path.extname(_) === '.mobi').should.have.lengthOf(1)
       done()
     })
-  })
-})
-
-describe('#conditionally', () => {
-  it('should execute the callback if a condition is met', () => {
-    mobi.conditionally(false).should.eventually.be.fulfilled
-    mobi.conditionally(true, Promise.resolve(1)).should.eventually.equal(1)
   })
 })
