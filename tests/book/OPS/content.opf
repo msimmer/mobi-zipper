@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" version="3.0" xml:lang="en" unique-identifier="uuid" prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata>
+    <meta property="dcterms:title">Sample Book</meta>
+    <dc:title id="_1f96c0154fb6390ce116cb25a5d2e41f">Sample Book</dc:title>
+    <meta refines="#_1f96c0154fb6390ce116cb25a5d2e41f" property="title-type">main</meta>
+    <meta property="dcterms:creator">Author Name</meta>
+    <dc:creator id="_acf02de2b2b0f43f5e3a9c1e62d08053">Author Name</dc:creator>
+    <meta refines="#_acf02de2b2b0f43f5e3a9c1e62d08053" property="role">aut</meta>
+    <meta property="dcterms:contributor">bber</meta>
+    <dc:contributor id="_f0d9f68b33fc821c9e556a51005db336">bber</dc:contributor>
+    <meta refines="#_f0d9f68b33fc821c9e556a51005db336" property="role">ctb</meta>
+    <meta property="dcterms:language">en-US</meta>
+    <dc:language id="_c54d066306d25bfefd04e9060a2f7a4e">en-US</dc:language>
+    <meta property="dcterms:rights">Sample Book © 2016</meta>
+    <dc:rights id="_e4516273fe3a3401e45f2920aa94cee8">Sample Book © 2016</dc:rights>
+    <meta property="dcterms:format">epub+zip</meta>
+    <dc:format id="_869dfe623f243f740d37c917b5844e0a">epub+zip</dc:format>
+    <meta property="dcterms:date">Fri Jan 01 2016 01:00:00 GMT+0100 (CET)</meta>
+    <meta property="dcterms:publisher">Maxwell Simmer</meta>
+    <dc:publisher id="_bd40f6f7dc328d6dcf6a42747ee809f8">Maxwell Simmer</dc:publisher>
+    <meta name="date-modified" content="Fri Jan 01 2016 01:00:00 GMT+0100 (CET)" />
+    <meta property="dcterms:identifier">urn:isbn:d731e886c8c7ef7a79a87812a5345560</meta>
+    <dc:identifier id="uuid">urn:isbn:d731e886c8c7ef7a79a87812a5345560</dc:identifier>
+    <meta name="cover" content="_cover.jpg" />
+    <meta property="dcterms:modified">2016-11-21T16:42:49Z</meta>
+  </metadata>
+  <manifest>
+    <item id="chapter-1.xhtml" href="text/chapter-1.xhtml" media-type="application/xhtml+xml" />
+    <item id="_toc.xhtml" href="toc.xhtml" media-type="application/xhtml+xml" properties="nav" />
+    <item id="_toc.ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="_city.jpg" href="images/city.jpg" media-type="image/jpeg" />
+    <item id="_cover.jpg" href="images/cover.jpg" media-type="image/jpeg" />
+    <item id="_stylesheets.css" href="stylesheets/stylesheets.css" media-type="text/css" />
+    <item id="_application.js" href="javascripts/application.js" media-type="application/javascript" />
+  </manifest>
+  <spine toc="_toc.ncx">
+    <itemref idref="chapter-1.xhtml" linear="yes" />
+    <itemref idref="_toc.xhtml" linear="yes" />
+  </spine>
+  <guide>
+    <reference type="" title="" href="text/chapter-1.xhtml" />
+    <reference type="" title="" href="toc.xhtml" />
+  </guide>
+</package>

@@ -1,15 +1,20 @@
 {
-  "parser": "babel-eslint",
-  "extends": ["standard"],
-  "presets": ["es2015", "stage-0"],
-  "ecmaFeatures": { "classes": true, "jsx": true },
-  "plugins": ["babel"],
+  "env": {
+    "es6": true
+  },
   "rules": {
     "comma-dangle": [2, "always-multiline"],
     "no-multiple-empty-lines": 0,
-    "space-before-function-paren": [2, {
+    "space-before-function-paren": [
+      2,
+      {
         "anonymous": "always",
         "named": "never"
-    }]
+      }
+    ]
+  },
+  "globals": {
+    "describe": true,
+    "it": true
   }
 }

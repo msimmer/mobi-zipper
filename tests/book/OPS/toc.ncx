@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta name="dtb:uid" content="urn:isbn:d731e886c8c7ef7a79a87812a5345560" />
+    <meta name="dtb:depth" content="1" />
+    <meta name="dtb:totalPageCount" content="1" />
+    <meta name="dtb:maxPageNumber" content="1" />
+  </head>
+  <docTitle>
+    <text>Sample Book</text>
+  </docTitle>
+  <docAuthor>
+    <text>Author Name</text>
+  </docAuthor>
+  <navMap>
+    <navPoint id="navPoint-1" playOrder="1">
+      <navLabel>
+        <text>Chapter One</text>
+      </navLabel>
+      <content src="text/chapter-1.xhtml" />
+    </navPoint>
+  </navMap>
+</ncx>
