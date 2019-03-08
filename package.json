@@ -21,14 +21,14 @@
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
     "eslint": "^5.15.1",
-    "mocha": "^3.4.2"
+    "mocha": "^6.0.2"
   },
   "bugs": {
     "url": "https://github.com/msimmer/mobi-zipper/issues"
   },
   "homepage": "https://github.com/msimmer/mobi-zipper#readme",
   "dependencies": {
-    "command-exists": "^1.2.2",
+    "command-exists": "^1.2.8",
     "fs-extra": "^4.0.2"
   }
 }
