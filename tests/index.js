@@ -42,7 +42,6 @@ describe('mobi-zipper', () => {
   it('rejects errors', () => {
     return chai
       .expect(zipper.create({ input: inputError, output, clean: true }))
-      .to.eventually.be.rejectedWith('There was an error creating the mobi')
-      .and.be.an.instanceOf(Error)
+      .to.eventually.be.rejectedWith(Error)
   })
 })
