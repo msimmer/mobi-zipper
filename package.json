@@ -20,8 +20,8 @@
   "devDependencies": {
     "chai": "^4.0.2",
     "chai-as-promised": "^7.0.0",
-    "eslint": "^5.15.1",
-    "mocha": "^6.0.2"
+    "eslint": "^5.16.0",
+    "mocha": "^6.2.2"
   },
   "bugs": {
     "url": "https://github.com/msimmer/mobi-zipper/issues"
