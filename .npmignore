@@ -2,6 +2,8 @@ tests
 index.js
 .circleci
 .editorconfig
-.eslintrc
+.eslintrc.js
 .gitattributes
 .prettierrc
+babel.config.js
+index.js
