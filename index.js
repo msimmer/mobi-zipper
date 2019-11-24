@@ -1,5 +1,5 @@
 const path = require('path')
-const { exec } = require('child_process')
+const { spawn } = require('child_process')
 const exists = require('command-exists')
 const fs = require('fs-extra')
 
@@ -48,19 +48,24 @@ class Zipper {
 
   compileMobi() {
     return new Promise((resolve, reject) => {
-      const cwd = path.dirname(this.settings.input)
-      const flags = this.settings.flags.join(' ')
-      const cmd = [
-        this.ebookConvert,
-        this.settings.input,
-        this.bookpath,
-        flags,
-      ].join(' ')
+      const options = { cwd: path.dirname(this.settings.input) }
+      const cmd = this.ebookConvert
+      const args = [this.settings.input, this.bookpath, ...this.settings.flags]
 
-      exec(cmd, { cwd }, (err, stdout, stderr) => {
-        if (err) reject(err)
-        if (stderr !== '') reject(new Error(stderr))
-        if (stdout !== '') console.log(stdout)
+      const proc = spawn(cmd, args, options)
+      let ebookConvertError = 0
+
+      proc.stdout.on('data', data => process.stdout.write(data.toString()))
+      proc.stderr.on('data', data => {
+        ebookConvertError = 1
+        process.stderr.write(data.toString())
+      })
+
+      proc.on('close', code => {
+        if (code === 1) return reject('Process exited with code 1')
+        if (ebookConvertError === 1) {
+          return reject(new Error('There was an error creating the mobi'))
+        }
         resolve()
       })
     })
@@ -82,7 +87,7 @@ class Zipper {
 
     this.modified = new Date().toISOString().replace(/:/g, '-')
     this.bookname = `${this.modified}.mobi`
-    this.bookpath = `"${path.resolve(this.settings.output, this.bookname)}"`
+    this.bookpath = `${path.resolve(this.settings.output, this.bookname)}`
 
     return new Promise((resolve, reject) =>
       this.removeExistingMobis()
