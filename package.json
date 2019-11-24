@@ -35,7 +35,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
-    "mocha": "^6.2.2"
+    "mocha": "^6.2.2",
+    "prettier": "^1.19.1"
   },
   "bugs": {
     "url": "https://github.com/msimmer/mobi-zipper/issues"
@@ -43,7 +44,6 @@
   "homepage": "https://github.com/msimmer/mobi-zipper#readme",
   "dependencies": {
     "command-exists": "^1.2.8",
-    "fs-extra": "^4.0.2",
-    "prettier": "^1.19.1"
+    "fs-extra": "^4.0.2"
   }
 }
