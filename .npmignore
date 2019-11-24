@@ -1,4 +1,5 @@
 tests
+index.js
 .circleci
 .editorconfig
 .eslintrc

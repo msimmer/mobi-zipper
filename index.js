@@ -19,6 +19,7 @@ class Zipper {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   checkForCalibre() {
     return new Promise((resolve, reject) => {
       exists('ebook-convert', (err, ok) => {
@@ -66,13 +67,13 @@ class Zipper {
         if (ebookConvertError === 1) {
           return reject(new Error('There was an error creating the mobi'))
         }
-        resolve()
+        return resolve()
       })
     })
   }
 
   create(args = {}) {
-    this.settings = Object.assign({}, this.options, args)
+    this.settings = { ...this.options, ...args }
     const required = ['input', 'output']
 
     required.forEach(arg => {
