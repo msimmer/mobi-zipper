@@ -25,5 +25,5 @@ const options = {
   clean: true // Removes existing .mobis in the output dir
 }
 
-zipper.create(options).catch(err => console.error(err))
+zipper.create(options).catch(console.error)
 ```
