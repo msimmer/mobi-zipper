@@ -62,7 +62,7 @@ class Zipper {
       })
 
       proc.on('close', code => {
-        if (code === 1) return reject('Process exited with code 1')
+        if (code === 1) return reject(new Error('Process exited with code 1'))
         if (ebookConvertError === 1) {
           return reject(new Error('There was an error creating the mobi'))
         }
